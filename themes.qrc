@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/data">
+        <file>theme_data.txt</file>
+    </qresource>
+</RCC>
