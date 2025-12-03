@@ -1,0 +1,82 @@
+.TH "md__r_e_a_d_m_e" 3 "SVP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md__r_e_a_d_m_e \- Secure PassVault (SPV) 
+.PP
+
+
+.PP
+\fBCross-Platform System for Advanced Cryptographic Key Management and Semantic Identity Generation\fP
+
+.PP
+.PP
+.SH "1\&. Project Overview and Architecture"
+.PP
+Secure PassVault (SPV) is a robust, local-only password and identity management application developed in \fBC++\fP using the \fBQt Widgets Framework\fP\&. The core design adheres to the \fBModel-View-Controller (MVC)\fP architectural pattern, ensuring a clean separation between the user interface (\fR\fBMainWindow\fP\fP) and the cryptographic business logic (\fR\fBVaultBackend\fP\fP)\&.
+
+.PP
+The primary objective is to eliminate common security vulnerabilities by integrating advanced \fBSystem Programming\fP concepts directly into the data handling and persistence layers\&.
+.SH "2\&. Security and Cryptographic Architecture"
+.PP
+The integrity and confidentiality of the database (\fRvault\&.dat\fP) rely on a multi-layered cryptographic container approach\&.
+.SS "2\&.1\&. Key Derivation and Anti-Brute Force Mechanism"
+The user's Master Key is transformed into a cryptographically strong encryption key using an iterative function designed to resist modern GPU-accelerated Brute Force attacks\&.
+
+.PP
+.IP "\(bu" 2
+\fBMechanism:\fP PBKDF2-like process (Password-Based Key Derivation Function 2 structure)\&.
+.IP "\(bu" 2
+\fBKey Strength:\fP Uses a 256-bit derived key ($DK$)\&.
+.IP "\(bu" 2
+\fBCost Parameter:\fP The process involves \fB10,000+ sequential SHA-256 iterations\fP applied to the Master Key concatenated with a unique, cryptographically random \fBSalt\fP\&. This computational delay ensures that attempted dictionary attacks are economically infeasible\&.
+.PP
+.SS "2\&.2\&. Data Integrity and Authentication"
+The \fRvault\&.dat\fP container integrates two levels of critical verification:
+
+.PP
+.IP "1." 4
+\fBIntegrity Control (HMAC):\fP Every save operation appends a \fBHMAC-SHA256\fP tag to the data\&. During loading, the system recalculates the HMAC using the derived key\&. Any mismatch indicates file corruption or external modification, leading to immediate access denial\&.
+.IP "2." 4
+\fBSystem-Bound 2FA:\fP A unique \fBSystem ID Hash\fP (derived from the host machine's hardware/OS identifiers) is stored in the file header\&. Access is blocked if the file is opened on an unauthorized machine, acting as a two-factor authentication layer tied to the system itself\&.
+.PP
+.SS "2\&.3\&. Data Persistence Reliability"
+To guarantee the stability and persistence of data across different operating environments (Dev vs\&. Release mode, different OSes), the application utilizes the \fBQStandardPaths\fP class\&.
+
+.PP
+.IP "\(bu" 2
+The system dynamically determines the absolute, writable location for application data (e\&.g\&., \fR~/Library/Application Support/SPV/\fP on macOS)\&.
+.IP "\(bu" 2
+This approach is essential to avoid failures associated with using unreliable relative paths, which are often blocked by OS security permissions in deployment environments\&.
+.PP
+.SH "3\&. Advanced Generation Models"
+.PP
+SPV implements two distinct, specialized models for creating credentials:
+.SS "3\&.1\&. Cryptographic Generation (Passwords)"
+.IP "\(bu" 2
+\fBEntropy Source:\fP Uses a \fBCryptographically Secure Pseudorandom Number Generator (CSPRNG)\fP (\fRQRandomGenerator::system()\fP)\&.
+.IP "\(bu" 2
+\fBStrength Analysis:\fP The generated output is analyzed in real-time using the \fBShannon Entropy Formula\fP ($E$) to provide an objective score (0–100) of password resistance: $$E = L \\times \\log_2(R)$$ Where $L$ is the length and $R$ is the size of the available character pool\&.
+.PP
+.SS "3\&.2\&. Semantic Generation (Nicknames/Logins)"
+This module generates unique identifiers that are both memorable and complex:
+
+.PP
+.IP "\(bu" 2
+\fBData Volume:\fP The model utilizes a proprietary base of \fB116 thematic dictionaries\fP (over 21,000 words) loaded via Qt Resource System (QRC)\&.
+.IP "\(bu" 2
+\fBMushup Strategy:\fP Combines parts of two words from two randomly selected thematic categories (e\&.g\&., \fRword1[start]\fP + \fRword2[end]\fP) to create a unique semantic core\&.
+.IP "\(bu" 2
+\fBSymbol Injection:\fP Random symbols and numbers are inserted and appended to the semantic core, adding an extra layer of randomness and ensuring high uniqueness across services\&.
+.PP
+.SH "4\&. Technical Stack and Deployment"
+.PP
+Component  Detail  \fBLanguage\fP  C++17  \fBFramework\fP  Qt 6 (Qt Widgets)  \fBEncryption Primitives\fP  SHA-256, XOR (PBKDF2, HMAC)  \fBUI/UX\fP  Split View Layout, QStyleSheets Dark Theme  \fBData Format\fP  Encrypted JSON  
+.SS "Deployment (macOS Example)"
+To create a standalone application bundle (\fR\&.app\fP), the project must be compiled in \fBRelease mode\fP and processed by the Qt deployment tool:
+
+.PP
+```bash 
+.SH "Example Deployment Command"
+.PP
+/path/to/Qt/6\&.x\&.x/macos/bin/macdeployqt /path/to/build/keyvaulttfk\&.app 

@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md__r_e_a_d_m_e</compoundname>
+    <title>Secure PassVault (SPV)</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__r_e_a_d_m_e_1autotoc_md0"/></para>
+<para><bold>Cross-Platform System for Advanced Cryptographic Key Management and Semantic Identity Generation</bold></para>
+<para><hruler/>
+</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>1. Project Overview and Architecture</title><para>Secure PassVault (SPV) is a robust, local-only password and identity management application developed in <bold>C++</bold> using the <bold>Qt Widgets Framework</bold>. The core design adheres to the <bold>Model-View-Controller (MVC)</bold> architectural pattern, ensuring a clean separation between the user interface (<computeroutput><ref refid="class_main_window" kindref="compound">MainWindow</ref></computeroutput>) and the cryptographic business logic (<computeroutput><ref refid="class_vault_backend" kindref="compound">VaultBackend</ref></computeroutput>).</para>
+<para>The primary objective is to eliminate common security vulnerabilities by integrating advanced <bold>System Programming</bold> concepts directly into the data handling and persistence layers.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>2. Security and Cryptographic Architecture</title><para>The integrity and confidentiality of the database (<computeroutput>vault.dat</computeroutput>) rely on a multi-layered cryptographic container approach.</para>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>2.1. Key Derivation and Anti-Brute Force Mechanism</title><para>The user&apos;s Master Key is transformed into a cryptographically strong encryption key using an iterative function designed to resist modern GPU-accelerated Brute Force attacks.</para>
+<para><itemizedlist>
+<listitem><para><bold>Mechanism:</bold> PBKDF2-like process (Password-Based Key Derivation Function 2 structure).</para>
+</listitem><listitem><para><bold>Key Strength:</bold> Uses a 256-bit derived key ($DK$).</para>
+</listitem><listitem><para><bold>Cost Parameter:</bold> The process involves <bold>10,000+ sequential SHA-256 iterations</bold> applied to the Master Key concatenated with a unique, cryptographically random <bold>Salt</bold>. This computational delay ensures that attempted dictionary attacks are economically infeasible.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>2.2. Data Integrity and Authentication</title><para>The <computeroutput>vault.dat</computeroutput> container integrates two levels of critical verification:</para>
+<para><orderedlist>
+<listitem><para><bold>Integrity Control (HMAC):</bold> Every save operation appends a <bold>HMAC-SHA256</bold> tag to the data. During loading, the system recalculates the HMAC using the derived key. Any mismatch indicates file corruption or external modification, leading to immediate access denial.</para>
+</listitem><listitem><para><bold>System-Bound 2FA:</bold> A unique <bold>System ID Hash</bold> (derived from the host machine&apos;s hardware/OS identifiers) is stored in the file header. Access is blocked if the file is opened on an unauthorized machine, acting as a two-factor authentication layer tied to the system itself.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md6">
+<title>2.3. Data Persistence Reliability</title><para>To guarantee the stability and persistence of data across different operating environments (Dev vs. Release mode, different OSes), the application utilizes the <bold>QStandardPaths</bold> class.</para>
+<para><itemizedlist>
+<listitem><para>The system dynamically determines the absolute, writable location for application data (e.g., <computeroutput>~/Library/Application Support/SPV/</computeroutput> on macOS).</para>
+</listitem><listitem><para>This approach is essential to avoid failures associated with using unreliable relative paths, which are often blocked by OS security permissions in deployment environments.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md7">
+<title>3. Advanced Generation Models</title><para>SPV implements two distinct, specialized models for creating credentials:</para>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md8">
+<title>3.1. Cryptographic Generation (Passwords)</title><para><itemizedlist>
+<listitem><para><bold>Entropy Source:</bold> Uses a <bold>Cryptographically Secure Pseudorandom Number Generator (CSPRNG)</bold> (<computeroutput>QRandomGenerator::system()</computeroutput>).</para>
+</listitem><listitem><para><bold>Strength Analysis:</bold> The generated output is analyzed in real-time using the <bold>Shannon Entropy Formula</bold> ($E$) to provide an objective score (0–100) of password resistance: $$E = L \times \log_2(R)$$ Where $L$ is the length and $R$ is the size of the available character pool.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md9">
+<title>3.2. Semantic Generation (Nicknames/Logins)</title><para>This module generates unique identifiers that are both memorable and complex:</para>
+<para><itemizedlist>
+<listitem><para><bold>Data Volume:</bold> The model utilizes a proprietary base of <bold>116 thematic dictionaries</bold> (over 21,000 words) loaded via Qt Resource System (QRC).</para>
+</listitem><listitem><para><bold>Mushup Strategy:</bold> Combines parts of two words from two randomly selected thematic categories (e.g., <computeroutput>word1[start]</computeroutput> + <computeroutput>word2[end]</computeroutput>) to create a unique semantic core.</para>
+</listitem><listitem><para><bold>Symbol Injection:</bold> Random symbols and numbers are inserted and appended to the semantic core, adding an extra layer of randomness and ensuring high uniqueness across services.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md10">
+<title>4. Technical Stack and Deployment</title><para><table rows="6" cols="2"><row>
+<entry thead="yes" align='left'><para>Component  </para>
+</entry><entry thead="yes" align='left'><para>Detail  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para><bold>Language</bold>  </para>
+</entry><entry thead="no" align='left'><para>C++17  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para><bold>Framework</bold>  </para>
+</entry><entry thead="no" align='left'><para>Qt 6 (Qt Widgets)  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para><bold>Encryption Primitives</bold>  </para>
+</entry><entry thead="no" align='left'><para>SHA-256, XOR (PBKDF2, HMAC)  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para><bold>UI/UX</bold>  </para>
+</entry><entry thead="no" align='left'><para>Split View Layout, QStyleSheets Dark Theme  </para>
+</entry></row>
+<row>
+<entry thead="no" align='left'><para><bold>Data Format</bold>  </para>
+</entry><entry thead="no" align='left'><para>Encrypted JSON  </para>
+</entry></row>
+</table>
+</para>
+<sect2 id="md__r_e_a_d_m_e_1autotoc_md11">
+<title>Deployment (macOS Example)</title><para>To create a standalone application bundle (<computeroutput>.app</computeroutput>), the project must be compiled in <bold>Release mode</bold> and processed by the Qt deployment tool:</para>
+<para>```bash </para>
+</sect2>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md12">
+<title>Example Deployment Command</title><para>/path/to/Qt/6.x.x/macos/bin/macdeployqt /path/to/build/keyvaulttfk.app </para>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

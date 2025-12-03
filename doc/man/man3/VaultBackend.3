@@ -1,0 +1,247 @@
+.TH "VaultBackend" 3 "SVP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+VaultBackend
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include 'vaultbackend\&.h'\fP
+.PP
+Inherits QObject\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBVaultBackend\fP (QObject *parent=nullptr)"
+.br
+.ti -1c
+.RI "QString \fBgenerateSecureString\fP (int length, bool useUpper, bool useLower, bool useDigits, bool useSymbols)"
+.br
+.ti -1c
+.RI "int \fBcalculatePasswordStrength\fP (const QString &password)"
+.br
+.ti -1c
+.RI "QString \fBgenerateNickname\fP (int maxLength, bool useMushup, bool useInjection)"
+.br
+.ti -1c
+.RI "QStringList \fBgetAvailableThemes\fP () const"
+.br
+.ti -1c
+.RI "QString \fBsaveEntry\fP (const QString &site, const QString &login, const QString &password, const QString &masterKey)"
+.br
+.ti -1c
+.RI "QString \fBupdateEntry\fP (int index, const QString &site, const QString &login, const QString &password, const QString &masterKey)"
+.br
+.ti -1c
+.RI "QString \fBdeleteEntry\fP (int index)"
+.br
+.ti -1c
+.RI "QVariantMap \fBgetEntryDetails\fP (int index) const"
+.br
+.ti -1c
+.RI "QString \fBgetPassword\fP (int index, const QString &masterKey)"
+.br
+.ti -1c
+.RI "bool \fBloadDatabase\fP (const QString &masterKey)"
+.br
+.ti -1c
+.RI "bool \fBcheckSystemBound\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisSystemBoundDatabase\fP () const"
+.br
+.ti -1c
+.RI "QString \fBexportDatabase\fP (const QString &filePath)"
+.br
+.ti -1c
+.RI "QString \fBimportDatabase\fP (const QString &filePath, const QString &masterKey)"
+.br
+.ti -1c
+.RI "QVariantList \fBvaultEntries\fP () const"
+.br
+.ti -1c
+.RI "bool \fBisDatabaseLoaded\fP () const"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBloadNicknameWords\fP (const QString &filePath='data/theme_data\&.txt')"
+.br
+.ti -1c
+.RI "QByteArray \fBderiveKey\fP (const QString &password, const QByteArray &salt)"
+.br
+.ti -1c
+.RI "QByteArray \fBencryptData\fP (const QByteArray &data, const QString &masterKey)"
+.br
+.ti -1c
+.RI "QByteArray \fBdecryptData\fP (const QByteArray &encryptedData, const QString &masterKey)"
+.br
+.ti -1c
+.RI "void \fBsaveDatabaseToFile\fP ()"
+.br
+.ti -1c
+.RI "QByteArray \fBgenerateSystemHash\fP () const"
+.br
+.ti -1c
+.RI "bool \fBcheckIntegrity\fP (const QByteArray &fileData, const QByteArray &key) const"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "QVariantList \fBm_vaultEntries\fP"
+.br
+.ti -1c
+.RI "QString \fBm_masterKey\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBm_salt\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBm_iv\fP"
+.br
+.ti -1c
+.RI "QByteArray \fBm_systemIDHash\fP"
+.br
+.ti -1c
+.RI "QMap< QString, QStringList > \fBm_themeWords\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB10\fP of file \fBvaultbackend\&.h\fP\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "VaultBackend::VaultBackend (QObject * parent = \fRnullptr\fP)\fR [explicit]\fP"
+
+.PP
+Definition at line \fB56\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int VaultBackend::calculatePasswordStrength (const QString & password)"
+
+.PP
+Definition at line \fB209\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "bool VaultBackend::checkIntegrity (const QByteArray & fileData, const QByteArray & key) const\fR [private]\fP"
+
+.PP
+Definition at line \fB42\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "bool VaultBackend::checkSystemBound () const"
+
+.PP
+Definition at line \fB52\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QByteArray VaultBackend::decryptData (const QByteArray & encryptedData, const QString & masterKey)\fR [private]\fP"
+
+.PP
+Definition at line \fB96\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::deleteEntry (int index)"
+
+.PP
+Definition at line \fB315\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QByteArray VaultBackend::deriveKey (const QString & password, const QByteArray & salt)\fR [private]\fP"
+
+.PP
+Definition at line \fB61\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QByteArray VaultBackend::encryptData (const QByteArray & data, const QString & masterKey)\fR [private]\fP"
+
+.PP
+Definition at line \fB70\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::exportDatabase (const QString & filePath)"
+
+.PP
+Definition at line \fB360\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::generateNickname (int maxLength, bool useMushup, bool useInjection)"
+
+.PP
+Definition at line \fB155\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::generateSecureString (int length, bool useUpper, bool useLower, bool useDigits, bool useSymbols)"
+
+.PP
+Definition at line \fB235\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QByteArray VaultBackend::generateSystemHash () const\fR [private]\fP"
+
+.PP
+Definition at line \fB37\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QStringList VaultBackend::getAvailableThemes () const"
+
+.PP
+Definition at line \fB151\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QVariantMap VaultBackend::getEntryDetails (int index) const"
+
+.PP
+Definition at line \fB323\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::getPassword (int index, const QString & masterKey)"
+
+.PP
+Definition at line \fB328\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::importDatabase (const QString & filePath, const QString & masterKey)"
+
+.PP
+Definition at line \fB367\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "bool VaultBackend::isDatabaseLoaded () const\fR [inline]\fP"
+
+.PP
+Definition at line \fB36\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "bool VaultBackend::isSystemBoundDatabase () const\fR [inline]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "bool VaultBackend::loadDatabase (const QString & masterKey)"
+
+.PP
+Definition at line \fB333\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "void VaultBackend::loadNicknameWords (const QString & filePath = \fR'data/theme_data\&.txt'\fP)\fR [private]\fP"
+
+.PP
+Definition at line \fB123\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "void VaultBackend::saveDatabaseToFile ()\fR [private]\fP"
+
+.PP
+Definition at line \fB260\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::saveEntry (const QString & site, const QString & login, const QString & password, const QString & masterKey)"
+
+.PP
+Definition at line \fB283\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QString VaultBackend::updateEntry (int index, const QString & site, const QString & login, const QString & password, const QString & masterKey)"
+
+.PP
+Definition at line \fB299\fP of file \fBvaultbackend\&.cpp\fP\&.
+.SS "QVariantList VaultBackend::vaultEntries () const\fR [inline]\fP"
+
+.PP
+Definition at line \fB35\fP of file \fBvaultbackend\&.h\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "QByteArray VaultBackend::m_iv\fR [private]\fP"
+
+.PP
+Definition at line \fB43\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "QString VaultBackend::m_masterKey\fR [private]\fP"
+
+.PP
+Definition at line \fB40\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "QByteArray VaultBackend::m_salt\fR [private]\fP"
+
+.PP
+Definition at line \fB42\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "QByteArray VaultBackend::m_systemIDHash\fR [private]\fP"
+
+.PP
+Definition at line \fB44\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "QMap<QString, QStringList> VaultBackend::m_themeWords\fR [private]\fP"
+
+.PP
+Definition at line \fB46\fP of file \fBvaultbackend\&.h\fP\&.
+.SS "QVariantList VaultBackend::m_vaultEntries\fR [private]\fP"
+
+.PP
+Definition at line \fB39\fP of file \fBvaultbackend\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for SVP from the source code\&.

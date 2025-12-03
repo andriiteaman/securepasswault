@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="class_vault_backend" kind="class" language="C++" prot="public">
+    <compoundname>VaultBackend</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="vaultbackend_8h" local="yes">vaultbackend.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" prot="private" static="no" mutable="no">
+        <type>QVariantList</type>
+        <definition>QVariantList VaultBackend::m_vaultEntries</definition>
+        <argsstring></argsstring>
+        <name>m_vaultEntries</name>
+        <qualifiedname>VaultBackend::m_vaultEntries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="39" column="18" bodyfile="vaultbackend.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" compoundref="vaultbackend_8cpp" startline="315" endline="321">deleteEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a9db269a788d613296a4217eea322cbd0" compoundref="vaultbackend_8cpp" startline="323" endline="326">getEntryDetails</referencedby>
+        <referencedby refid="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" compoundref="vaultbackend_8cpp" startline="328" endline="331">getPassword</referencedby>
+        <referencedby refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" compoundref="vaultbackend_8cpp" startline="367" endline="386">importDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</referencedby>
+        <referencedby refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" compoundref="vaultbackend_8cpp" startline="283" endline="297">saveEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" compoundref="vaultbackend_8cpp" startline="299" endline="313">updateEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" compoundref="vaultbackend_8h" startline="35" endline="35">vaultEntries</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString VaultBackend::m_masterKey</definition>
+        <argsstring></argsstring>
+        <name>m_masterKey</name>
+        <qualifiedname>VaultBackend::m_masterKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="40" column="13" bodyfile="vaultbackend.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="class_vault_backend_1a025b01f0c0aa75b6249feb39661d094d" compoundref="vaultbackend_8cpp" startline="360" endline="365">exportDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" compoundref="vaultbackend_8cpp" startline="328" endline="331">getPassword</referencedby>
+        <referencedby refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" compoundref="vaultbackend_8cpp" startline="367" endline="386">importDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" compoundref="vaultbackend_8h" startline="36" endline="36">isDatabaseLoaded</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</referencedby>
+        <referencedby refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" compoundref="vaultbackend_8cpp" startline="283" endline="297">saveEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" compoundref="vaultbackend_8cpp" startline="299" endline="313">updateEntry</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" prot="private" static="no" mutable="no">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::m_salt</definition>
+        <argsstring></argsstring>
+        <name>m_salt</name>
+        <qualifiedname>VaultBackend::m_salt</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="42" column="16" bodyfile="vaultbackend.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</referencedby>
+        <referencedby refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" compoundref="vaultbackend_8cpp" startline="70" endline="94">encryptData</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_vault_backend_1a3cc92fcba3c5d0db1deb41d76f48ae95" prot="private" static="no" mutable="no">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::m_iv</definition>
+        <argsstring></argsstring>
+        <name>m_iv</name>
+        <qualifiedname>VaultBackend::m_iv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="43" column="16" bodyfile="vaultbackend.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" prot="private" static="no" mutable="no">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::m_systemIDHash</definition>
+        <argsstring></argsstring>
+        <name>m_systemIDHash</name>
+        <qualifiedname>VaultBackend::m_systemIDHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="44" column="16" bodyfile="vaultbackend.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" compoundref="vaultbackend_8cpp" startline="52" endline="54">checkSystemBound</referencedby>
+        <referencedby refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</referencedby>
+        <referencedby refid="class_vault_backend_1af6975535b01de82a6742556f097942b9" compoundref="vaultbackend_8h" startline="31" endline="31">isSystemBoundDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" prot="private" static="no" mutable="no">
+        <type>QMap&lt; QString, QStringList &gt;</type>
+        <definition>QMap&lt;QString, QStringList&gt; VaultBackend::m_themeWords</definition>
+        <argsstring></argsstring>
+        <name>m_themeWords</name>
+        <qualifiedname>VaultBackend::m_themeWords</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="46" column="10" bodyfile="vaultbackend.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="class_vault_backend_1a616756f8346a4287afbacd79bcfd4ff6" compoundref="vaultbackend_8cpp" startline="155" endline="206">generateNickname</referencedby>
+        <referencedby refid="class_vault_backend_1ad222fc32424594b516b7b3c160626fea" compoundref="vaultbackend_8cpp" startline="151" endline="153">getAvailableThemes</referencedby>
+        <referencedby refid="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" compoundref="vaultbackend_8cpp" startline="123" endline="149">loadNicknameWords</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VaultBackend::VaultBackend</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>VaultBackend</name>
+        <qualifiedname>VaultBackend::VaultBackend</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="14" column="14" bodyfile="vaultbackend.cpp" bodystart="56" bodyend="58"/>
+        <references refid="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" compoundref="vaultbackend_8cpp" startline="123" endline="149">loadNicknameWords</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a9ce1dbdc58ed267bf679842e916c4ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::generateSecureString</definition>
+        <argsstring>(int length, bool useUpper, bool useLower, bool useDigits, bool useSymbols)</argsstring>
+        <name>generateSecureString</name>
+        <qualifiedname>VaultBackend::generateSecureString</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useUpper</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useLower</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useDigits</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useSymbols</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="16" column="13" bodyfile="vaultbackend.cpp" bodystart="235" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int VaultBackend::calculatePasswordStrength</definition>
+        <argsstring>(const QString &amp;password)</argsstring>
+        <name>calculatePasswordStrength</name>
+        <qualifiedname>VaultBackend::calculatePasswordStrength</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>password</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="17" column="9" bodyfile="vaultbackend.cpp" bodystart="209" bodyend="232"/>
+        <referencedby refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" compoundref="vaultbackend_8cpp" startline="283" endline="297">saveEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" compoundref="vaultbackend_8cpp" startline="299" endline="313">updateEntry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a616756f8346a4287afbacd79bcfd4ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::generateNickname</definition>
+        <argsstring>(int maxLength, bool useMushup, bool useInjection)</argsstring>
+        <name>generateNickname</name>
+        <qualifiedname>VaultBackend::generateNickname</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>maxLength</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useMushup</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>useInjection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="19" column="13" bodyfile="vaultbackend.cpp" bodystart="155" bodyend="206"/>
+        <references refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" compoundref="vaultbackend_8h" startline="46">m_themeWords</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1ad222fc32424594b516b7b3c160626fea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList VaultBackend::getAvailableThemes</definition>
+        <argsstring>() const</argsstring>
+        <name>getAvailableThemes</name>
+        <qualifiedname>VaultBackend::getAvailableThemes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="20" column="17" bodyfile="vaultbackend.cpp" bodystart="151" bodyend="153"/>
+        <references refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" compoundref="vaultbackend_8h" startline="46">m_themeWords</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::saveEntry</definition>
+        <argsstring>(const QString &amp;site, const QString &amp;login, const QString &amp;password, const QString &amp;masterKey)</argsstring>
+        <name>saveEntry</name>
+        <qualifiedname>VaultBackend::saveEntry</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>site</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>login</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="22" column="13" bodyfile="vaultbackend.cpp" bodystart="283" bodyend="297"/>
+        <references refid="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" compoundref="vaultbackend_8cpp" startline="209" endline="232">calculatePasswordStrength</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+        <references refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::updateEntry</definition>
+        <argsstring>(int index, const QString &amp;site, const QString &amp;login, const QString &amp;password, const QString &amp;masterKey)</argsstring>
+        <name>updateEntry</name>
+        <qualifiedname>VaultBackend::updateEntry</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>site</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>login</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="23" column="13" bodyfile="vaultbackend.cpp" bodystart="299" bodyend="313"/>
+        <references refid="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" compoundref="vaultbackend_8cpp" startline="209" endline="232">calculatePasswordStrength</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+        <references refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::deleteEntry</definition>
+        <argsstring>(int index)</argsstring>
+        <name>deleteEntry</name>
+        <qualifiedname>VaultBackend::deleteEntry</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="24" column="13" bodyfile="vaultbackend.cpp" bodystart="315" bodyend="321"/>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+        <references refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a9db269a788d613296a4217eea322cbd0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVariantMap</type>
+        <definition>QVariantMap VaultBackend::getEntryDetails</definition>
+        <argsstring>(int index) const</argsstring>
+        <name>getEntryDetails</name>
+        <qualifiedname>VaultBackend::getEntryDetails</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="26" column="17" bodyfile="vaultbackend.cpp" bodystart="323" bodyend="326"/>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::getPassword</definition>
+        <argsstring>(int index, const QString &amp;masterKey)</argsstring>
+        <name>getPassword</name>
+        <qualifiedname>VaultBackend::getPassword</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="27" column="13" bodyfile="vaultbackend.cpp" bodystart="328" bodyend="331"/>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool VaultBackend::loadDatabase</definition>
+        <argsstring>(const QString &amp;masterKey)</argsstring>
+        <name>loadDatabase</name>
+        <qualifiedname>VaultBackend::loadDatabase</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="29" column="10" bodyfile="vaultbackend.cpp" bodystart="333" bodyend="358"/>
+        <references refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</references>
+        <references refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" compoundref="vaultbackend_8cpp" startline="37" endline="40">generateSystemHash</references>
+        <references refid="vaultbackend_8cpp_1a98c022bb2fbafdfa9caf1a702ae742b6" compoundref="vaultbackend_8cpp" startline="30" endline="35">get8RandomBytes</references>
+        <references refid="vaultbackend_8cpp_1a36e65b8bde72bfc04f6b229e05142c0d" compoundref="vaultbackend_8cpp" startline="18" endline="28">getDatabasePath</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" compoundref="vaultbackend_8h" startline="42">m_salt</references>
+        <references refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" compoundref="vaultbackend_8h" startline="44">m_systemIDHash</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool VaultBackend::checkSystemBound</definition>
+        <argsstring>() const</argsstring>
+        <name>checkSystemBound</name>
+        <qualifiedname>VaultBackend::checkSystemBound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="30" column="10" bodyfile="vaultbackend.cpp" bodystart="52" bodyend="54"/>
+        <references refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" compoundref="vaultbackend_8cpp" startline="37" endline="40">generateSystemHash</references>
+        <references refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" compoundref="vaultbackend_8h" startline="44">m_systemIDHash</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1af6975535b01de82a6742556f097942b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool VaultBackend::isSystemBoundDatabase</definition>
+        <argsstring>() const</argsstring>
+        <name>isSystemBoundDatabase</name>
+        <qualifiedname>VaultBackend::isSystemBoundDatabase</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="31" column="10" bodyfile="vaultbackend.h" bodystart="31" bodyend="31"/>
+        <references refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" compoundref="vaultbackend_8h" startline="44">m_systemIDHash</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a025b01f0c0aa75b6249feb39661d094d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::exportDatabase</definition>
+        <argsstring>(const QString &amp;filePath)</argsstring>
+        <name>exportDatabase</name>
+        <qualifiedname>VaultBackend::exportDatabase</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="33" column="13" bodyfile="vaultbackend.cpp" bodystart="360" bodyend="365"/>
+        <references refid="vaultbackend_8cpp_1a36e65b8bde72bfc04f6b229e05142c0d" compoundref="vaultbackend_8cpp" startline="18" endline="28">getDatabasePath</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString VaultBackend::importDatabase</definition>
+        <argsstring>(const QString &amp;filePath, const QString &amp;masterKey)</argsstring>
+        <name>importDatabase</name>
+        <qualifiedname>VaultBackend::importDatabase</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="34" column="13" bodyfile="vaultbackend.cpp" bodystart="367" bodyend="386"/>
+        <references refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+        <references refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QVariantList</type>
+        <definition>QVariantList VaultBackend::vaultEntries</definition>
+        <argsstring>() const</argsstring>
+        <name>vaultEntries</name>
+        <qualifiedname>VaultBackend::vaultEntries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="35" column="18" bodyfile="vaultbackend.h" bodystart="35" bodyend="35"/>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool VaultBackend::isDatabaseLoaded</definition>
+        <argsstring>() const</argsstring>
+        <name>isDatabaseLoaded</name>
+        <qualifiedname>VaultBackend::isDatabaseLoaded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="36" column="10" bodyfile="vaultbackend.h" bodystart="36" bodyend="36"/>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VaultBackend::loadNicknameWords</definition>
+        <argsstring>(const QString &amp;filePath=&quot;data/theme_data.txt&quot;)</argsstring>
+        <name>loadNicknameWords</name>
+        <qualifiedname>VaultBackend::loadNicknameWords</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filePath</declname>
+          <defval>&quot;data/theme_data.txt&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="47" column="10" bodyfile="vaultbackend.cpp" bodystart="123" bodyend="149"/>
+        <references refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" compoundref="vaultbackend_8h" startline="46">m_themeWords</references>
+        <referencedby refid="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" compoundref="vaultbackend_8cpp" startline="56" endline="58">VaultBackend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::deriveKey</definition>
+        <argsstring>(const QString &amp;password, const QByteArray &amp;salt)</argsstring>
+        <name>deriveKey</name>
+        <qualifiedname>VaultBackend::deriveKey</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>salt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="49" column="16" bodyfile="vaultbackend.cpp" bodystart="61" bodyend="68"/>
+        <referencedby refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</referencedby>
+        <referencedby refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" compoundref="vaultbackend_8cpp" startline="70" endline="94">encryptData</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::encryptData</definition>
+        <argsstring>(const QByteArray &amp;data, const QString &amp;masterKey)</argsstring>
+        <name>encryptData</name>
+        <qualifiedname>VaultBackend::encryptData</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="50" column="16" bodyfile="vaultbackend.cpp" bodystart="70" bodyend="94"/>
+        <references refid="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" compoundref="vaultbackend_8cpp" startline="61" endline="68">deriveKey</references>
+        <references refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" compoundref="vaultbackend_8cpp" startline="37" endline="40">generateSystemHash</references>
+        <references refid="vaultbackend_8cpp_1a98c022bb2fbafdfa9caf1a702ae742b6" compoundref="vaultbackend_8cpp" startline="30" endline="35">get8RandomBytes</references>
+        <references refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" compoundref="vaultbackend_8h" startline="42">m_salt</references>
+        <referencedby refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" compoundref="vaultbackend_8cpp" startline="260" endline="281">saveDatabaseToFile</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::decryptData</definition>
+        <argsstring>(const QByteArray &amp;encryptedData, const QString &amp;masterKey)</argsstring>
+        <name>decryptData</name>
+        <qualifiedname>VaultBackend::decryptData</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>encryptedData</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>masterKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="51" column="16" bodyfile="vaultbackend.cpp" bodystart="96" bodyend="121"/>
+        <references refid="class_vault_backend_1af21b376d4c2e2fdcb048515430b32bcc" compoundref="vaultbackend_8cpp" startline="42" endline="50">checkIntegrity</references>
+        <references refid="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" compoundref="vaultbackend_8cpp" startline="61" endline="68">deriveKey</references>
+        <references refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" compoundref="vaultbackend_8cpp" startline="37" endline="40">generateSystemHash</references>
+        <references refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" compoundref="vaultbackend_8h" startline="42">m_salt</references>
+        <references refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" compoundref="vaultbackend_8h" startline="44">m_systemIDHash</references>
+        <referencedby refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" compoundref="vaultbackend_8cpp" startline="367" endline="386">importDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a573965fa954eed30b770514edabf054e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VaultBackend::saveDatabaseToFile</definition>
+        <argsstring>()</argsstring>
+        <name>saveDatabaseToFile</name>
+        <qualifiedname>VaultBackend::saveDatabaseToFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="52" column="10" bodyfile="vaultbackend.cpp" bodystart="260" bodyend="281"/>
+        <references refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" compoundref="vaultbackend_8cpp" startline="70" endline="94">encryptData</references>
+        <references refid="vaultbackend_8cpp_1a36e65b8bde72bfc04f6b229e05142c0d" compoundref="vaultbackend_8cpp" startline="18" endline="28">getDatabasePath</references>
+        <references refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" compoundref="vaultbackend_8h" startline="40">m_masterKey</references>
+        <references refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" compoundref="vaultbackend_8h" startline="39">m_vaultEntries</references>
+        <referencedby refid="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" compoundref="vaultbackend_8cpp" startline="315" endline="321">deleteEntry</referencedby>
+        <referencedby refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" compoundref="vaultbackend_8cpp" startline="367" endline="386">importDatabase</referencedby>
+        <referencedby refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" compoundref="vaultbackend_8cpp" startline="283" endline="297">saveEntry</referencedby>
+        <referencedby refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" compoundref="vaultbackend_8cpp" startline="299" endline="313">updateEntry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>QByteArray VaultBackend::generateSystemHash</definition>
+        <argsstring>() const</argsstring>
+        <name>generateSystemHash</name>
+        <qualifiedname>VaultBackend::generateSystemHash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="54" column="16" bodyfile="vaultbackend.cpp" bodystart="37" bodyend="40"/>
+        <referencedby refid="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" compoundref="vaultbackend_8cpp" startline="52" endline="54">checkSystemBound</referencedby>
+        <referencedby refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</referencedby>
+        <referencedby refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" compoundref="vaultbackend_8cpp" startline="70" endline="94">encryptData</referencedby>
+        <referencedby refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" compoundref="vaultbackend_8cpp" startline="333" endline="358">loadDatabase</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_vault_backend_1af21b376d4c2e2fdcb048515430b32bcc" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool VaultBackend::checkIntegrity</definition>
+        <argsstring>(const QByteArray &amp;fileData, const QByteArray &amp;key) const</argsstring>
+        <name>checkIntegrity</name>
+        <qualifiedname>VaultBackend::checkIntegrity</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>fileData</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="vaultbackend.h" line="55" column="10" bodyfile="vaultbackend.cpp" bodystart="42" bodyend="50"/>
+        <referencedby refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" compoundref="vaultbackend_8cpp" startline="96" endline="121">decryptData</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>VaultBackend</label>
+        <link refid="class_vault_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>VaultBackend</label>
+        <link refid="class_vault_backend"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="vaultbackend.h" line="10" column="1" bodyfile="vaultbackend.h" bodystart="10" bodyend="56"/>
+    <listofallmembers>
+      <member refid="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>calculatePasswordStrength</name></member>
+      <member refid="class_vault_backend_1af21b376d4c2e2fdcb048515430b32bcc" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>checkIntegrity</name></member>
+      <member refid="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>checkSystemBound</name></member>
+      <member refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>decryptData</name></member>
+      <member refid="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>deleteEntry</name></member>
+      <member refid="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>deriveKey</name></member>
+      <member refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>encryptData</name></member>
+      <member refid="class_vault_backend_1a025b01f0c0aa75b6249feb39661d094d" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>exportDatabase</name></member>
+      <member refid="class_vault_backend_1a616756f8346a4287afbacd79bcfd4ff6" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>generateNickname</name></member>
+      <member refid="class_vault_backend_1a9ce1dbdc58ed267bf679842e916c4ba7" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>generateSecureString</name></member>
+      <member refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>generateSystemHash</name></member>
+      <member refid="class_vault_backend_1ad222fc32424594b516b7b3c160626fea" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>getAvailableThemes</name></member>
+      <member refid="class_vault_backend_1a9db269a788d613296a4217eea322cbd0" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>getEntryDetails</name></member>
+      <member refid="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>getPassword</name></member>
+      <member refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>importDatabase</name></member>
+      <member refid="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>isDatabaseLoaded</name></member>
+      <member refid="class_vault_backend_1af6975535b01de82a6742556f097942b9" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>isSystemBoundDatabase</name></member>
+      <member refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>loadDatabase</name></member>
+      <member refid="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>loadNicknameWords</name></member>
+      <member refid="class_vault_backend_1a3cc92fcba3c5d0db1deb41d76f48ae95" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_iv</name></member>
+      <member refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_masterKey</name></member>
+      <member refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_salt</name></member>
+      <member refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_systemIDHash</name></member>
+      <member refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_themeWords</name></member>
+      <member refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>m_vaultEntries</name></member>
+      <member refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" prot="private" virt="non-virtual"><scope>VaultBackend</scope><name>saveDatabaseToFile</name></member>
+      <member refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>saveEntry</name></member>
+      <member refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>updateEntry</name></member>
+      <member refid="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>VaultBackend</name></member>
+      <member refid="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" prot="public" virt="non-virtual"><scope>VaultBackend</scope><name>vaultEntries</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

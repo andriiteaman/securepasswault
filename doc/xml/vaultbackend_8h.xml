@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="vaultbackend_8h" kind="file" language="C++">
+    <compoundname>vaultbackend.h</compoundname>
+    <includes local="no">QObject</includes>
+    <includes local="no">QVariantList</includes>
+    <includes local="no">QVariantMap</includes>
+    <includes local="no">QMap</includes>
+    <includes local="no">QStandardPaths</includes>
+    <includedby refid="mainwindow_8h" local="yes">mainwindow.h</includedby>
+    <includedby refid="vaultbackend_8cpp" local="yes">vaultbackend.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>vaultbackend.h</label>
+        <link refid="vaultbackend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QMap</label>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QStandardPaths</label>
+      </node>
+      <node id="3">
+        <label>QVariantList</label>
+      </node>
+      <node id="4">
+        <label>QVariantMap</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="4">
+        <label>mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>vaultbackend.cpp</label>
+        <link refid="vaultbackend_8cpp"/>
+      </node>
+      <node id="1">
+        <label>vaultbackend.h</label>
+        <link refid="vaultbackend_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_vault_backend" prot="public">VaultBackend</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VAULTBACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VAULTBACKEND_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVariantList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVariantMap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStandardPaths&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_vault_backend" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" kindref="member">VaultBackend</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" kindref="member">VaultBackend</ref>(QObject<sp/>*parent<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a9ce1dbdc58ed267bf679842e916c4ba7" kindref="member">generateSecureString</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useUpper,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useLower,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useDigits,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useSymbols);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" kindref="member">calculatePasswordStrength</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;password);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a616756f8346a4287afbacd79bcfd4ff6" kindref="member">generateNickname</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>maxLength,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useMushup,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>useInjection);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/><ref refid="class_vault_backend_1ad222fc32424594b516b7b3c160626fea" kindref="member">getAvailableThemes</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" kindref="member">saveEntry</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;site,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;login,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;password,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" kindref="member">updateEntry</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;site,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;login,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;password,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" kindref="member">deleteEntry</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantMap<sp/><ref refid="class_vault_backend_1a9db269a788d613296a4217eea322cbd0" kindref="member">getEntryDetails</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" kindref="member">getPassword</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" kindref="member">loadDatabase</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" kindref="member">checkSystemBound</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31" refid="class_vault_backend_1af6975535b01de82a6742556f097942b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1af6975535b01de82a6742556f097942b9" kindref="member">isSystemBoundDatabase</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" kindref="member">m_systemIDHash</ref>.isEmpty();<sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a025b01f0c0aa75b6249feb39661d094d" kindref="member">exportDatabase</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;filePath);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" kindref="member">importDatabase</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;filePath,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="35" refid="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantList<sp/><ref refid="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" kindref="member">vaultEntries</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" kindref="member">m_vaultEntries</ref>;<sp/>}</highlight></codeline>
+<codeline lineno="36" refid="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" kindref="member">isDatabaseLoaded</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!<ref refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" kindref="member">m_masterKey</ref>.isEmpty();<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariantList<sp/><ref refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" kindref="member">m_vaultEntries</ref>;</highlight></codeline>
+<codeline lineno="40" refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" kindref="member">m_masterKey</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" kindref="member">m_salt</ref>;</highlight></codeline>
+<codeline lineno="43" refid="class_vault_backend_1a3cc92fcba3c5d0db1deb41d76f48ae95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1a3cc92fcba3c5d0db1deb41d76f48ae95" kindref="member">m_iv</ref>;</highlight></codeline>
+<codeline lineno="44" refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" kindref="member">m_systemIDHash</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMap&lt;QString,<sp/>QStringList&gt;<sp/><ref refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" kindref="member">m_themeWords</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" kindref="member">loadNicknameWords</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;filePath<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;data/theme_data.txt&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" kindref="member">deriveKey</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;password,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;salt);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" kindref="member">encryptData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;data,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" kindref="member">decryptData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;encryptedData,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;masterKey);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" kindref="member">saveDatabaseToFile</ref>();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/><ref refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" kindref="member">generateSystemHash</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_vault_backend_1af21b376d4c2e2fdcb048515430b32bcc" kindref="member">checkIntegrity</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;fileData,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QByteArray<sp/>&amp;key)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="vaultbackend.h"/>
+  </compounddef>
+</doxygen>

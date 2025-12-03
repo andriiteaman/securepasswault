@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+  <compound refid="class_main_window" kind="class"><name>MainWindow</name>
+    <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kind="variable"><name>ui</name></member>
+    <member refid="class_main_window_1ab33e4b5da36ef26bb063b3b4803ee98f" kind="variable"><name>vaultManager</name></member>
+    <member refid="class_main_window_1a6479c76503b3e3f57a592d48c244214e" kind="variable"><name>masterKey</name></member>
+    <member refid="class_main_window_1ab9c6492b81f3117ca8fed55c7b97da44" kind="variable"><name>m_statusLabel</name></member>
+    <member refid="class_main_window_1a996c5a2b6f77944776856f08ec30858d" kind="function"><name>MainWindow</name></member>
+    <member refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" kind="function"><name>~MainWindow</name></member>
+    <member refid="class_main_window_1a6f07e911e9368f6643afa0aed2272353" kind="slot"><name>on_generateButton_clicked</name></member>
+    <member refid="class_main_window_1a85ea79556ca7515950d5c7931ce9e6c8" kind="slot"><name>on_generateNickButton_clicked</name></member>
+    <member refid="class_main_window_1a52e6d2463f17c5cd056817c6f47285dd" kind="slot"><name>on_saveButton_clicked</name></member>
+    <member refid="class_main_window_1a9698794daa03f8301231e68af4fa7f87" kind="slot"><name>on_viewDetailsButton_clicked</name></member>
+    <member refid="class_main_window_1aeff69bfa20bbae0478792db65fd08837" kind="slot"><name>showPasswordDetails</name></member>
+    <member refid="class_main_window_1ac70a65e0bdf1b517e947b0bd0161987e" kind="slot"><name>on_deleteButton_clicked</name></member>
+    <member refid="class_main_window_1ae22acf0b9981ab783fdee8b0fb1c9c49" kind="slot"><name>on_exportButton_clicked</name></member>
+    <member refid="class_main_window_1a5e3b3f4dafca62ecb908f1262837d960" kind="slot"><name>on_importButton_clicked</name></member>
+    <member refid="class_main_window_1ab614c1dedc695f5096cc0ccf750490ab" kind="slot"><name>filterVaultList</name></member>
+    <member refid="class_main_window_1a3f66e05fdfb23da1881bcd366ea709e3" kind="slot"><name>clearClipboard</name></member>
+    <member refid="class_main_window_1a2da49242a5efb9ed05e41b82ae19b6fa" kind="function"><name>promptForMasterKey</name></member>
+    <member refid="class_main_window_1a7ecbc717f7f59b53ea5b8c56d3e7558c" kind="function"><name>updateVaultList</name></member>
+  </compound>
+  <compound refid="class_vault_backend" kind="class"><name>VaultBackend</name>
+    <member refid="class_vault_backend_1a37added67282a3f1fc40643b9edc4e89" kind="variable"><name>m_vaultEntries</name></member>
+    <member refid="class_vault_backend_1a0b5de841b24fcc761b04ee9f56a51ed3" kind="variable"><name>m_masterKey</name></member>
+    <member refid="class_vault_backend_1a8af29e122d483436257465d7d9bd48fc" kind="variable"><name>m_salt</name></member>
+    <member refid="class_vault_backend_1a3cc92fcba3c5d0db1deb41d76f48ae95" kind="variable"><name>m_iv</name></member>
+    <member refid="class_vault_backend_1a01edb97754d3e7efb53e8b74e12ba431" kind="variable"><name>m_systemIDHash</name></member>
+    <member refid="class_vault_backend_1a55eae9caf2f7a1f343ead88467c5762a" kind="variable"><name>m_themeWords</name></member>
+    <member refid="class_vault_backend_1a2ccb75599e0b7beaa86fba275d1a8494" kind="function"><name>VaultBackend</name></member>
+    <member refid="class_vault_backend_1a9ce1dbdc58ed267bf679842e916c4ba7" kind="function"><name>generateSecureString</name></member>
+    <member refid="class_vault_backend_1ae7dc19633bc16ec2dbe7561b26af31db" kind="function"><name>calculatePasswordStrength</name></member>
+    <member refid="class_vault_backend_1a616756f8346a4287afbacd79bcfd4ff6" kind="function"><name>generateNickname</name></member>
+    <member refid="class_vault_backend_1ad222fc32424594b516b7b3c160626fea" kind="function"><name>getAvailableThemes</name></member>
+    <member refid="class_vault_backend_1adf7c321ab83457d68a22755995a43bda" kind="function"><name>saveEntry</name></member>
+    <member refid="class_vault_backend_1a219f10e7c3ca82a0b802233b8307cbcd" kind="function"><name>updateEntry</name></member>
+    <member refid="class_vault_backend_1a97544c89c39d5a021878cdcc24b4559a" kind="function"><name>deleteEntry</name></member>
+    <member refid="class_vault_backend_1a9db269a788d613296a4217eea322cbd0" kind="function"><name>getEntryDetails</name></member>
+    <member refid="class_vault_backend_1a13b188d7a0c38a5a6502b88a3969ba40" kind="function"><name>getPassword</name></member>
+    <member refid="class_vault_backend_1ad290cc4009e634714b989000b6f0a51c" kind="function"><name>loadDatabase</name></member>
+    <member refid="class_vault_backend_1a7c813497ce377ce2a1f885a6a5bf5c71" kind="function"><name>checkSystemBound</name></member>
+    <member refid="class_vault_backend_1af6975535b01de82a6742556f097942b9" kind="function"><name>isSystemBoundDatabase</name></member>
+    <member refid="class_vault_backend_1a025b01f0c0aa75b6249feb39661d094d" kind="function"><name>exportDatabase</name></member>
+    <member refid="class_vault_backend_1ab84b02c860fd917800f10f1b89a72a0f" kind="function"><name>importDatabase</name></member>
+    <member refid="class_vault_backend_1a1fdc4492cdd1dcec696c6d0525337973" kind="function"><name>vaultEntries</name></member>
+    <member refid="class_vault_backend_1a677f078864ea017e71acda30dc5bf2cb" kind="function"><name>isDatabaseLoaded</name></member>
+    <member refid="class_vault_backend_1a155a503fd34e7b36b506d38a5eab1719" kind="function"><name>loadNicknameWords</name></member>
+    <member refid="class_vault_backend_1a61608f6a6d3e42d6d6cb1eb82a6e6a1a" kind="function"><name>deriveKey</name></member>
+    <member refid="class_vault_backend_1aa067cfeedf196fe45d29c157c292e2c1" kind="function"><name>encryptData</name></member>
+    <member refid="class_vault_backend_1ae65ef07ae665dbd8004d50e3a4de82bb" kind="function"><name>decryptData</name></member>
+    <member refid="class_vault_backend_1a573965fa954eed30b770514edabf054e" kind="function"><name>saveDatabaseToFile</name></member>
+    <member refid="class_vault_backend_1a33180482ea5181d81d7e41d73b7cad9b" kind="function"><name>generateSystemHash</name></member>
+    <member refid="class_vault_backend_1af21b376d4c2e2fdcb048515430b32bcc" kind="function"><name>checkIntegrity</name></member>
+  </compound>
+  <compound refid="namespace_ui" kind="namespace"><name>Ui</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="mainwindow_8cpp" kind="file"><name>mainwindow.cpp</name>
+  </compound>
+  <compound refid="mainwindow_8h" kind="file"><name>mainwindow.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="vaultbackend_8cpp" kind="file"><name>vaultbackend.cpp</name>
+    <member refid="vaultbackend_8cpp_1a36e65b8bde72bfc04f6b229e05142c0d" kind="function"><name>getDatabasePath</name></member>
+    <member refid="vaultbackend_8cpp_1a98c022bb2fbafdfa9caf1a702ae742b6" kind="function"><name>get8RandomBytes</name></member>
+  </compound>
+  <compound refid="vaultbackend_8h" kind="file"><name>vaultbackend.h</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md__r_e_a_d_m_e</name>
+  </compound>
+</doxygenindex>

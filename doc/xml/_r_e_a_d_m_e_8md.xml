@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Secure<sp/>PassVault<sp/>(SPV)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Cross-Platform<sp/>System<sp/>for<sp/>Advanced<sp/>Cryptographic<sp/>Key<sp/>Management<sp/>and<sp/>Semantic<sp/>Identity<sp/>Generation**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>Project<sp/>Overview<sp/>and<sp/>Architecture</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Secure<sp/>PassVault<sp/>(SPV)<sp/>is<sp/>a<sp/>robust,<sp/>local-only<sp/>password<sp/>and<sp/>identity<sp/>management<sp/>application<sp/>developed<sp/>in<sp/>**C++**<sp/>using<sp/>the<sp/>**Qt<sp/>Widgets<sp/>Framework**.<sp/>The<sp/>core<sp/>design<sp/>adheres<sp/>to<sp/>the<sp/>**Model-View-Controller<sp/>(MVC)**<sp/>architectural<sp/>pattern,<sp/>ensuring<sp/>a<sp/>clean<sp/>separation<sp/>between<sp/>the<sp/>user<sp/>interface<sp/>(`MainWindow`)<sp/>and<sp/>the<sp/>cryptographic<sp/>business<sp/>logic<sp/>(`VaultBackend`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>primary<sp/>objective<sp/>is<sp/>to<sp/>eliminate<sp/>common<sp/>security<sp/>vulnerabilities<sp/>by<sp/>integrating<sp/>advanced<sp/>**System<sp/>Programming**<sp/>concepts<sp/>directly<sp/>into<sp/>the<sp/>data<sp/>handling<sp/>and<sp/>persistence<sp/>layers.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>Security<sp/>and<sp/>Cryptographic<sp/>Architecture</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>integrity<sp/>and<sp/>confidentiality<sp/>of<sp/>the<sp/>database<sp/>(`vault.dat`)<sp/>rely<sp/>on<sp/>a<sp/>multi-layered<sp/>cryptographic<sp/>container<sp/>approach.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.1.<sp/>Key<sp/>Derivation<sp/>and<sp/>Anti-Brute<sp/>Force<sp/>Mechanism</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>user&apos;s<sp/>Master<sp/>Key<sp/>is<sp/>transformed<sp/>into<sp/>a<sp/>cryptographically<sp/>strong<sp/>encryption<sp/>key<sp/>using<sp/>an<sp/>iterative<sp/>function<sp/>designed<sp/>to<sp/>resist<sp/>modern<sp/>GPU-accelerated<sp/>Brute<sp/>Force<sp/>attacks.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**Mechanism:**<sp/>PBKDF2-like<sp/>process<sp/>(Password-Based<sp/>Key<sp/>Derivation<sp/>Function<sp/>2<sp/>structure).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Key<sp/>Strength:**<sp/>Uses<sp/>a<sp/>256-bit<sp/>derived<sp/>key<sp/>($DK$).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Cost<sp/>Parameter:**<sp/>The<sp/>process<sp/>involves<sp/>**10,000+<sp/>sequential<sp/>SHA-256<sp/>iterations**<sp/>applied<sp/>to<sp/>the<sp/>Master<sp/>Key<sp/>concatenated<sp/>with<sp/>a<sp/>unique,<sp/>cryptographically<sp/>random<sp/>**Salt**.<sp/>This<sp/>computational<sp/>delay<sp/>ensures<sp/>that<sp/>attempted<sp/>dictionary<sp/>attacks<sp/>are<sp/>economically<sp/>infeasible.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2.<sp/>Data<sp/>Integrity<sp/>and<sp/>Authentication</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>`vault.dat`<sp/>container<sp/>integrates<sp/>two<sp/>levels<sp/>of<sp/>critical<sp/>verification:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/><sp/>**Integrity<sp/>Control<sp/>(HMAC):**<sp/>Every<sp/>save<sp/>operation<sp/>appends<sp/>a<sp/>**HMAC-SHA256**<sp/>tag<sp/>to<sp/>the<sp/>data.<sp/>During<sp/>loading,<sp/>the<sp/>system<sp/>recalculates<sp/>the<sp/>HMAC<sp/>using<sp/>the<sp/>derived<sp/>key.<sp/>Any<sp/>mismatch<sp/>indicates<sp/>file<sp/>corruption<sp/>or<sp/>external<sp/>modification,<sp/>leading<sp/>to<sp/>immediate<sp/>access<sp/>denial.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/><sp/>**System-Bound<sp/>2FA:**<sp/>A<sp/>unique<sp/>**System<sp/>ID<sp/>Hash**<sp/>(derived<sp/>from<sp/>the<sp/>host<sp/>machine&apos;s<sp/>hardware/OS<sp/>identifiers)<sp/>is<sp/>stored<sp/>in<sp/>the<sp/>file<sp/>header.<sp/>Access<sp/>is<sp/>blocked<sp/>if<sp/>the<sp/>file<sp/>is<sp/>opened<sp/>on<sp/>an<sp/>unauthorized<sp/>machine,<sp/>acting<sp/>as<sp/>a<sp/>two-factor<sp/>authentication<sp/>layer<sp/>tied<sp/>to<sp/>the<sp/>system<sp/>itself.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.3.<sp/>Data<sp/>Persistence<sp/>Reliability</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>guarantee<sp/>the<sp/>stability<sp/>and<sp/>persistence<sp/>of<sp/>data<sp/>across<sp/>different<sp/>operating<sp/>environments<sp/>(Dev<sp/>vs.<sp/>Release<sp/>mode,<sp/>different<sp/>OSes),<sp/>the<sp/>application<sp/>utilizes<sp/>the<sp/>**QStandardPaths**<sp/>class.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>The<sp/>system<sp/>dynamically<sp/>determines<sp/>the<sp/>absolute,<sp/>writable<sp/>location<sp/>for<sp/>application<sp/>data<sp/>(e.g.,<sp/>`~/Library/Application<sp/>Support/SPV/`<sp/>on<sp/>macOS).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>This<sp/>approach<sp/>is<sp/>essential<sp/>to<sp/>avoid<sp/>failures<sp/>associated<sp/>with<sp/>using<sp/>unreliable<sp/>relative<sp/>paths,<sp/>which<sp/>are<sp/>often<sp/>blocked<sp/>by<sp/>OS<sp/>security<sp/>permissions<sp/>in<sp/>deployment<sp/>environments.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>Advanced<sp/>Generation<sp/>Models</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SPV<sp/>implements<sp/>two<sp/>distinct,<sp/>specialized<sp/>models<sp/>for<sp/>creating<sp/>credentials:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.1.<sp/>Cryptographic<sp/>Generation<sp/>(Passwords)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**Entropy<sp/>Source:**<sp/>Uses<sp/>a<sp/>**Cryptographically<sp/>Secure<sp/>Pseudorandom<sp/>Number<sp/>Generator<sp/>(CSPRNG)**<sp/>(`QRandomGenerator::system()`).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Strength<sp/>Analysis:**<sp/>The<sp/>generated<sp/>output<sp/>is<sp/>analyzed<sp/>in<sp/>real-time<sp/>using<sp/>the<sp/>**Shannon<sp/>Entropy<sp/>Formula**<sp/>($E$)<sp/>to<sp/>provide<sp/>an<sp/>objective<sp/>score<sp/>(0–100)<sp/>of<sp/>password<sp/>resistance:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$$E<sp/>=<sp/>L<sp/>\times<sp/>\log_2(R)$$</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Where<sp/>$L$<sp/>is<sp/>the<sp/>length<sp/>and<sp/>$R$<sp/>is<sp/>the<sp/>size<sp/>of<sp/>the<sp/>available<sp/>character<sp/>pool.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.2.<sp/>Semantic<sp/>Generation<sp/>(Nicknames/Logins)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>module<sp/>generates<sp/>unique<sp/>identifiers<sp/>that<sp/>are<sp/>both<sp/>memorable<sp/>and<sp/>complex:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>**Data<sp/>Volume:**<sp/>The<sp/>model<sp/>utilizes<sp/>a<sp/>proprietary<sp/>base<sp/>of<sp/>**116<sp/>thematic<sp/>dictionaries**<sp/>(over<sp/>21,000<sp/>words)<sp/>loaded<sp/>via<sp/>Qt<sp/>Resource<sp/>System<sp/>(QRC).</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Mushup<sp/>Strategy:**<sp/>Combines<sp/>parts<sp/>of<sp/>two<sp/>words<sp/>from<sp/>two<sp/>randomly<sp/>selected<sp/>thematic<sp/>categories<sp/>(e.g.,<sp/>`word1[start]`<sp/>+<sp/>`word2[end]`)<sp/>to<sp/>create<sp/>a<sp/>unique<sp/>semantic<sp/>core.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Symbol<sp/>Injection:**<sp/>Random<sp/>symbols<sp/>and<sp/>numbers<sp/>are<sp/>inserted<sp/>and<sp/>appended<sp/>to<sp/>the<sp/>semantic<sp/>core,<sp/>adding<sp/>an<sp/>extra<sp/>layer<sp/>of<sp/>randomness<sp/>and<sp/>ensuring<sp/>high<sp/>uniqueness<sp/>across<sp/>services.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>Technical<sp/>Stack<sp/>and<sp/>Deployment</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Component<sp/>|<sp/>Detail<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>:---<sp/>|<sp/>:---<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Language**<sp/>|<sp/>C++17<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Framework**<sp/>|<sp/>Qt<sp/>6<sp/>(Qt<sp/>Widgets)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Encryption<sp/>Primitives**<sp/>|<sp/>SHA-256,<sp/>XOR<sp/>(PBKDF2,<sp/>HMAC)<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**UI/UX**<sp/>|<sp/>Split<sp/>View<sp/>Layout,<sp/>QStyleSheets<sp/>Dark<sp/>Theme<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Data<sp/>Format**<sp/>|<sp/>Encrypted<sp/>JSON<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Deployment<sp/>(macOS<sp/>Example)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>create<sp/>a<sp/>standalone<sp/>application<sp/>bundle<sp/>(`.app`),<sp/>the<sp/>project<sp/>must<sp/>be<sp/>compiled<sp/>in<sp/>**Release<sp/>mode**<sp/>and<sp/>processed<sp/>by<sp/>the<sp/>Qt<sp/>deployment<sp/>tool:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Example<sp/>Deployment<sp/>Command</highlight></codeline>
+<codeline><highlight class="normal">/path/to/Qt/6.x.x/macos/bin/macdeployqt<sp/>/path/to/build/keyvaulttfk.app</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>
